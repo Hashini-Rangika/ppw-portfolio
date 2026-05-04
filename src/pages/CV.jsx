@@ -30,7 +30,7 @@ export default function CV() {
 
   return (
     <>
-           <style>{`
+      <style>{`
        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 body {
@@ -214,18 +214,12 @@ body {
 
           {/* ── Download button ── */}
           <div className='btn-wrap'>
-            <a
-              href='/cv.pdf'
-              download
-              className='download-btn'
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
-            >
+            <a href='/cv/Hashini_CV.pdf' download className='download-btn'>
               <div className='btn-inner'>
-                <div className='btn-icon'>{hovered ? "⬇" : "📄"}</div>
+                <div className='btn-icon'>📄</div>
                 <div className='btn-meta'>
                   <span className='btn-label'>Download CV</span>
-                  <span className='btn-sub'>PDF · Updated 2024</span>
+                  <span className='btn-sub'>PDF • Updated 2026</span>
                 </div>
               </div>
             </a>

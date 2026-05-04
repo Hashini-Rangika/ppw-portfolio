@@ -18,6 +18,7 @@ export default function Navbar() {
     { to: "/career", label: "Career" },
     { to: "/cv", label: "CV" },
     { to: "/certificates", label: "Certificates" },
+    { to: "/contact", label: "Contact" },
   ];
 
   return (
@@ -114,6 +115,24 @@ letter-spacing: -0.02em;
           border: 1px solid rgba(139,92,246,0.3);
         }
 
+        .nav-link.contact-link {
+          background: linear-gradient(135deg, #7c3aed, #2563eb);
+          color: #fff !important;
+          font-weight: 600;
+          border: none;
+          padding: 7px 16px;
+          box-shadow: 0 4px 16px rgba(124,58,237,0.25);
+        }
+
+        .nav-link.contact-link:hover {
+          transform: translateY(-1px);
+          background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+        }
+
+        .nav-link.contact-link.active {
+          border: 1px solid rgba(167,139,250,0.25);
+        }
+
         .nav-dot {
           width: 5px;
           height: 5px;
@@ -190,10 +209,10 @@ letter-spacing: -0.02em;
               <Link
                 key={to}
                 to={to}
-                className={`nav-link ${location.pathname === to ? "active" : ""}`}
+                className={`nav-link ${location.pathname === to ? "active" : ""} ${label === "Contact" ? "contact-link" : ""}`}
               >
                 {label}
-                <div className='nav-dot' />
+                {label !== "Contact" && <div className='nav-dot' />}
               </Link>
             ))}
           </div>
@@ -224,7 +243,7 @@ letter-spacing: -0.02em;
             <Link
               key={to}
               to={to}
-              className={`nav-link ${location.pathname === to ? "active" : ""}`}
+              className={`nav-link ${location.pathname === to ? "active" : ""} ${label === "Contact" ? "contact-link" : ""}`}
               onClick={() => setMenuOpen(false)}
             >
               {label}
